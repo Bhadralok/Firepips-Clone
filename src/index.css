@@ -1,0 +1,25 @@
+@import "tailwindcss";
+body {
+  font-family: "Satoshi", sans-serif;
+}
+
+@theme {
+  --color-primary-red: #ed3c52;
+  --color-secondary-red: #fde9ec;
+  --color-secondary-black: #565656;
+  --color-placeholder-gray: #c4c4c4;
+}
+.Loader {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
