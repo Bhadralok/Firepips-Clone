@@ -33,7 +33,7 @@ export default function RequestForm() {
     mode: "onChange",
     defaultValues: { email: "", role: "" },
   });
-  const onSubmit = (data) => {
+  const onSubmit = () => {
     navigate("/requestsent");
   };
 

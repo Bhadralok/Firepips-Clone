@@ -6,6 +6,7 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
+import { UserProvider } from "../Context/UserContext";
 
 import LoginLayout from "../Layouts/LoginLayout";
 import Login from "../Pages/Login";
@@ -14,6 +15,10 @@ import RequestPage from "../Pages/RequestPage";
 import Signup from "../Pages/Signup";
 import NotFoundPage from "../Pages/NotFoundPage";
 import RequestSent from "../Pages/RequestSent";
+import Registration from "../Pages/Registration";
+import NameSetup from "../Pages/NameSetup";
+import Dashboard from "../Pages/Dashboard";
+import DashboardLayout from "../Layouts/DashboardLayout";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,9 +29,14 @@ const router = createBrowserRouter(
         <Route path="request" element={<RequestPage />} />
         <Route path="signup" element={<Signup />} />
         <Route path="requestsent" element={<RequestSent />} />
+        <Route path="registration" element={<Registration />} />
+        <Route path="namesetup" element={<NameSetup />} />
       </Route>
 
-      {/* Fallback */}
+      <Route path="/dashboard" element={<DashboardLayout />}>
+        <Route index element={<Dashboard />} />
+      </Route>
+
       <Route path="*" element={<NotFoundPage />} />
     </>
   )
@@ -57,9 +67,7 @@ function Main() {
   if (isMobile) {
     return (
       <div className="flex items-center justify-center h-screen text-center p-4">
-        <p className="text-xl font-semibold">
-          Uhhhh! You can only view this on a PC though... sorry 🐰
-        </p>
+        <p className="text-xl font-semibold">Please switch to your desktop</p>
       </div>
     );
   }
@@ -68,7 +76,9 @@ function Main() {
 }
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <Main />
-  </StrictMode>
+  <UserProvider>
+    <StrictMode>
+      <Main />
+    </StrictMode>
+  </UserProvider>
 );

@@ -24,10 +24,9 @@ export default function RequestSent() {
         <CustomButton
           variant="secondary"
           icon1={<FaArrowUp className="rotate-45" />}
-            onClick={() => window.open("https://firepipsfx.com", "_blank")}
+          onClick={() => window.open("https://firepipsfx.com", "_blank")}
         >
           Go to official website
-          
         </CustomButton>
       </div>
     </div>
