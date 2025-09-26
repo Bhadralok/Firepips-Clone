@@ -33,7 +33,7 @@ export default function DashboardHeader() {
         <div className="flex items-center gap-3">
           <img src={navigation} alt="" />
           <div className="flex items-center gap-2 justify-center">
-            <p className="font-bold text-lg">Dashboard</p>
+            <p className="font-bold text-lg" onClick={handleToggle}>Dashboard</p>
             <span>
               {isOpen ? (
                 <FaChevronDown onClick={handleToggle} />

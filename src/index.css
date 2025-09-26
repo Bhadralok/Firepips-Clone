@@ -8,6 +8,7 @@ body {
   --color-secondary-red: #fde9ec;
   --color-secondary-black: #565656;
   --color-placeholder-gray: #c4c4c4;
+  --color-primary-black: #1e0306;
 }
 .Loader {
   width: 20px;
