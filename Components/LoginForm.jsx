@@ -4,15 +4,19 @@ import line from "../src/assets/line.svg";
 import { FaArrowRight } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
   const [isClicked, setIsClicked] = useState(false);
-
+  const navigate = useNavigate();
   const handleClick = () => {
     setIsClicked(true);
     setTimeout(() => {
       setIsClicked(false);
     }, 2000);
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 2200);
   };
 
   const {

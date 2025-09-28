@@ -7,14 +7,17 @@ import { useNavigate } from "react-router-dom";
 
 export default function Registration() {
   const [isClicked, setIsClicked] = useState(false);
+  const navigate = useNavigate();
   const handleClick = () => {
     setIsClicked(true);
     setTimeout(() => {
       setIsClicked(false);
     }, 2000);
+    setTimeout(() => {
+      navigate("/namesetup");
+    }, 2200);
   };
 
-  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -22,13 +25,10 @@ export default function Registration() {
   } = useForm({
     mode: "onChange", // validate while typing
   });
-  const onSubmit = () => {
-    navigate("/namesetup");
-  };
 
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit()}
       className="w-[35%] mb-13 bg-white/60 backdrop-blur-md border border-white/50 p-10 shadow-2xl rounded-3xl flex flex-col"
     >
       <h1 className="text-4xl text-primary-red leading-10 font-extrabold mb-3 mt-10">

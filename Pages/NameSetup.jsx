@@ -8,12 +8,17 @@ import { useNavigate } from "react-router-dom";
 export default function NameSetup() {
   const [isClicked, setIsClicked] = useState(false);
   const { setName } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setIsClicked(true);
     setTimeout(() => {
       setIsClicked(false);
     }, 2000);
+
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 2200);
   };
 
   const {
@@ -25,12 +30,9 @@ export default function NameSetup() {
     mode: "onChange",
   });
 
-  const navigate = useNavigate();
-
   const onSubmit = (data) => {
     console.log("First Name:", data.firstName);
     setName(data.firstName);
-    navigate("/dashboard");
   };
 
   // Watch the input value

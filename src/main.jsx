@@ -19,6 +19,7 @@ import Registration from "../Pages/Registration";
 import NameSetup from "../Pages/NameSetup";
 import Dashboard from "../Pages/Dashboard";
 import DashboardLayout from "../Layouts/DashboardLayout";
+import { AppProviders } from "../Context/AppProviders";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -76,9 +77,9 @@ function Main() {
 }
 
 createRoot(document.getElementById("root")).render(
-  <UserProvider>
+  <AppProviders>
     <StrictMode>
       <Main />
     </StrictMode>
-  </UserProvider>
+  </AppProviders>
 );
