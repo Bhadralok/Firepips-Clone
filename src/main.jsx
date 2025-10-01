@@ -20,6 +20,8 @@ import NameSetup from "../Pages/NameSetup";
 import Dashboard from "../Pages/Dashboard";
 import DashboardLayout from "../Layouts/DashboardLayout";
 import { AppProviders } from "../Context/AppProviders";
+import ActiveSubscribers from "../Pages/ActiveSubscribers";
+import CoursesUploaded from "../Pages/CoursesUploaded";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -36,6 +38,8 @@ const router = createBrowserRouter(
 
       <Route path="/dashboard" element={<DashboardLayout />}>
         <Route index element={<Dashboard />} />
+        <Route path="subscribers" element={<ActiveSubscribers />} />
+        <Route path="courses" element={<CoursesUploaded />} />
       </Route>
 
       <Route path="*" element={<NotFoundPage />} />
