@@ -6,7 +6,7 @@ import redline from "../src/assets/redline.svg";
 import userlogo from "../src/assets/Profile.svg";
 import Dropdown from "../Components/Dropdown";
 import DropdownLine from "../src/assets/DropdownLine.svg";
-import LogoutButton from "../src/assets/logoutbutton.svg";
+import LogoutButton from "../src/assets/Logoutbutton.svg";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
