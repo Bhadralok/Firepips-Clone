@@ -63,7 +63,7 @@ export default function Registration() {
         <img src={line} alt="" />
       </div>
 
-      <div className="flex flex-col pb-8 gap-6">
+      <div classNcolcame="flex flex-col pb-8 gap-6">
         {/* Password */}
         <Custominput
           label="Set a password"
